@@ -1,0 +1,220 @@
+body{
+    margin: 0px;
+    padding: 0px;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background: linear-gradient(180deg, #1abc9c 70%, white 100%);
+  overflow-x: hidden ;
+  cursor: pointer;
+}
+#navbar{
+    z-index: 950;
+    position: fixed;
+    top: 0px;
+    color: #212529;
+    background-color: #2C3E50;
+    transition-duration: 0.6s;
+    width: 100%;
+    height: 90px;
+}
+#LOGOa{ 
+    font-size: 30px;
+    font-weight: 700;
+    padding-left: 300px;
+    padding-right: 650px;
+    text-decoration: none;
+    color: white;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.nav-bar-ul{
+    position: sticky;
+    margin-top: 0;
+    width: 100%;    
+    height: 90px;
+    list-style-type: none;
+    display: flex;
+    position: absolute;
+    right: 0;
+    align-items: center;
+}
+.nav-bar-li-a{
+    text-decoration: none;
+    margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+    color: white;
+}
+.starting-section{
+    justify-content: center;
+}
+.lunch-box{
+    z-index: 800;
+    align-items: center;
+    display: flex;
+    background-color: #2C3E50;
+    position: relative;
+    top: 100px;
+    bottom: 23px;
+    left: 40%;
+    border-radius: 60%;
+    width: 300px;
+    height: 300px;
+}
+#lunchboximg{
+    z-index: 800;
+    position: relative;
+    left: 75px;
+    filter: invert(100%);
+    width: 50%;
+    height: 60%;
+}
+#btn-join{
+    margin-left: 520px;
+}
+.btn-1-home{
+    font-size: 20px;
+    font-weight: 200;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 2px solid white;
+    display: inline-flex;
+    /* border-color: white; */
+    box-shadow: none;
+    margin-left: 40px;
+    margin-right: 10px;
+    color: white;
+   padding: 20px 50px 20px 50px;
+}
+.list-section-main{
+    display: flex;
+    height: 500px;
+    width: 100%;
+    padding-left: 70px;
+}
+.list-class{
+    background-color: #2C3E50;
+    min-width: 300px;
+    height: 500px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 0 0.4rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+.list-section::-webkit-scrollbar{
+  -webkit-appearance: none;
+}
+.section-2{
+    margin-top: 20px;
+    height: 700px;
+    background-color: white;
+}
+.list-section{
+    display: flex;
+    background-color: white;
+    width: 1500px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 600px;
+}
+.card-list-ul{
+    list-style-type: none;
+}
+.card-list{
+    color: white;
+    list-style-type: none;
+    padding: 10px;
+}
+.card-list a{
+    color:white;
+}
+.card-list a:hover{
+    color:#1abc9c;  
+}
+#btn-join:hover{
+    background-color: white;
+    color: black;
+}
+#btn-explore:hover{
+    background-color: white;
+    color: black;
+}
+#login{
+    position: relative;
+    right: 75%;
+    padding-right: 40px;
+    font-size: 22px;
+    padding-left: 45px ;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    border-radius: 5%;
+    width: 70px;
+    height: 10px;
+    background-color: transparent;
+}
+#image{
+    width:200px;
+    height: 200px;
+    border-radius: 8px;
+    margin-left: 40px ;
+
+}
+#Joinus{
+    position: relative;
+    right: 50%;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-bottom: 32px;
+    padding-top: 20px;
+    border-radius: 5px;
+    width: 90px;
+    height: 2px;
+    background-color: transparent;
+}
+a{
+    text-decoration: none;
+}
+.explore{
+    padding-top: 20px;
+    margin-left: 36%;
+}
+#aboutus{
+    position: relative;
+    right: 95%;
+    padding: 25px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    border-radius: 5%;
+    width: 90px;
+    height: 2px;
+    background-color: transparent;
+}
+#aboutus:hover{
+    background-color: #1abc9c ;
+}
+#login:hover{
+    background-color: rgba(255, 0, 0, 0.8) ;
+}
+#Joinus:hover{
+    background-color:#1abc9c ;
+}
+.footer-home{
+    background-color: #2C3E50;
+    height: 200px;
+    margin-bottom: -30px;
+    padding: 0%;
+}
+.our-happycustomer{
+    height: 300px;
+    width: 100%;
+    background-color: white;
+}
+footer{
+    z-index: 950;
+}
+.footer-copyright{
+    background-color: #212529;
+    height: 40px;
+    padding: 0px;
+    margin: 0px;
+}

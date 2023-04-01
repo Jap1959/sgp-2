@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>eCommerce Product Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="/description-1.js"></script>
+<link rel="stylesheet" href="/styles/decription.css">
+<link rel="stylesheet" href="/styles/description1.css">
+  </head>
+  <body>
+    <div class="container mt-5 mb-5">
+      <div class="row d-flex justify-content-center">
+          <div class="col-md-10">
+              <div class="card">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="images p-3">
+                              <div class="text-center p-4"> <img id="main-image" src="/images/{{resimage1}}" width="1040" style="padding-right: 120%;"/> </div>
+                              <div style="display: flex;  width: 200px;" class="thumbnail text-center"> <img onclick="change_image(this)" src="/images/{{resimage1}}" width="70"> <img style="padding: 0px;"  onclick="change_image(this)" src="/images/{{resimage2}}" width="70"> </div>
+                          </div>
+                      </div>
+                      <div class="col-md-6" style="padding-left: 10%;margin-top: 4%;">
+                          <div class="product p-4">
+                              <div class="d-flex justify-content-between align-items-center">
+                                  <div class="d-flex align-items-center"> </div>
+                              </div>
+                              <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand"><h1>{{Name}}</h1></span>
+                                  <!-- <h5 class="text-uppercase">location:</h5> -->
+                                  <div class="price d-flex flex-row align-items-center"> <span class="act-price"></span>
+                                      <div class="ml-2"> <small class="dis-price"></small> <span></span> </div>
+                                  </div>
+                              </div>
+                              <p class="about">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                 Amet fuga deserunt qui facilis! Sed officia dolorem quidem aut id recusandae modi corrupti officiis! Exercitationem praesentium recusandae quaerat.
+                                Natus, tempore cupiditate?
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                 Vitae eos ab, deserunt dolorum amet dicta sed debitis fugiat illum iusto.
+                                Consequuntur vitae ratione eveniet ut eius incidunt quas? Quia, non.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Placeat nobis at expedita libero exercitationem iusto saepe, ad quisquam error pariatur eligendi corporis harum aliquid omnis.
+                                 In doloribus consequatur numquam dicta.
+                              </p>
+                              <div class="main-icon">
+                                <div class="icon-div">
+                                    <i class="fa fa-map-marker" id="icon"></i>
+                                    <p class="label-icon">{{address}}</p>
+                                </div>
+                                <div class="icon-div">
+                                    <i class="fa fa-phone"  id="icon1"></i>
+                                    <p  class="label-icon">{{Mobile}}</p>
+
+                                </div>
+                               
+                                </div>
+                              </div>
+                             
+                          </div>
+                        </div>
+                       
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="review-get">
+          <div class="reviews-conatiner">
+            {{#each results}}
+            <div class="reviews">
+                  <p style="color: black;opacity: 100%;">Name:{{Name}}</p>
+                  <p style="margin-left: 100px; color: black;">review:{{review}}</p>
+                </div>
+            {{/each}}
+              
+            </div>
+            </div>
+      <br>
+      <section class="contact section " id="contact" style="width:70%;margin-left: 170px;margin-top: 0px;">
+        <div class="container ">
+            <form action="/auth/addreview" method="POST">
+                <div class="row ">
+                    <div class="contact-form padd-15 ">
+                        <div class="row ">
+                        <div class="form-item col-6 padd-15 ">
+                            <div class="form-group ">
+                                <input type="text " name="Name" class="form-control " class="name " placeholder="Name" required>
+                            </div>
+                            <input type="hidden" name="Mobile"  value="{{Mobile}}">
+                            
+                        </div>
+                        <div class="form-item col-6 padd-15 ">
+                            <div class="form-group ">
+                                <input type="email" name="Email"class="form-control " class="email " placeholder="Email" required>
+                            </div>
+                        </div>
+                    </div>
+               
+                    <div class="row ">
+                        <div class="form-item col-12 padd-15 ">
+                            <div class="form-group ">
+                                <textarea name="message" class="form-control " class="msg " id=" " placeholder="Message" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="form-item col-12 padd-15 ">
+                            <button type="submit" name="submit" class="btn" style="background-color: #2c3e50;color:white;">Send Message</button>
+                            </div>
+                            {{#if message}}
+                            <h4 style="color:red">{{message}}</h4>
+                            {{/if}}
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+  </div>
+  <br>
+  </body>
+  </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/singup.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+    type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <title>Document</title>
+</head>
+<script>
+ 
+</script>
+<body>
+  <a href="/pages/login.html" style="color: #1abc9c;" id="exist">Already have an account?</a>
+  <div class="login-image">
+    <div class="login-illusconatiner">
+      <h1 style="color:white">Hi,Welcome back</h1>
+      <br>
+      <br>
+      <img id="loginillus" src="/images/undraw_secure_login_pdn4.svg" alt="">
+    </div>
+    <div>
+
+      <div class="container">
+        <div class="login-page">
+          <h2 style="color: white;font-size: 34px;">Sign up to tiffin services</h2>
+          <br>
+          <h3 style="color:#FFFFF7;" id="s2">Enter your details below</h3>
+          <br>
+        </div>
+        <form action="/auth/singup" method="POST">
+
+          <div class="form">
+            <br>
+            <input type="Number" name="Mobile" placeholder="" class="textbox" maxlength="10" minlength="10">
+            <label style="color: #fff;" class="form-label">
+              Mobile no
+            </label>
+
+            <input type="text" name="Name" placeholder="" class="textbo">
+            <label style="color: #fff;" class="form-labe">
+             Name
+            </label>
+            <br><br><br>
+            <input type="password" name="password" placeholder="" class="textbox1">
+            <label style="color: #fff;" class="form-label2">
+              Password
+            </label>
+            <input type="password" name="confirmpassword" placeholder="" class="textbo1">
+            <label style="color: #fff;" class="form-labe1">
+              Confirm Password.
+            </label>
+            <br><br><br>
+            <input type="text" name="address" placeholder="" class="textbo2">
+            <label style="color: #fff;" class="form-labe2">
+              Address
+            </label><br><br>
+            <input multiple type="file" id="myFile"  name="image"  >
+            <label style="color: #fff;" class="upload">
+              Upload Menu
+            </label>
+          </div>
+          <br><br>
+          <button type="submit" id="log">Sign Up</button>
+          {{#if message}}
+          <h4 style="margin:10px;color:red;font-size:10px;">{{message}}</h4>
+          {{/if}}
+      </div>
+      </form>
+</body>
+
+</html>

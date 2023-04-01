@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>explore</title>
+    <link rel="stylesheet" href="/styles/explore.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<script src="explore.js" defer></script>
+<script>
+    window.onscroll=function(){scrollFunction()};
+    function scrollFunction(){
+        if(document.body.scrollTop>30||document.documentElement.scrollTop>30){
+            document.getElementById('navbar').style.height="70px";
+            document.getElementById('size').style.height="70px";
+            document.getElementById('LOGOa').style.fontSize="32px";
+        }
+        else{
+            document.getElementById('navbar').style.height="90px";
+            document.getElementById('size').style.height="90px";
+            document.getElementById('LOGOa').style.fontSize="35px";
+        }
+    }
+</script>
+<body>
+    <header>
+        <nav id="navbar" class="nav-bar">
+                <ul id="size" class="nav-bar-ul">
+                    <li id="LOGO"><a id="LOGOa" href="#">Tiffinwala</a></li>
+                    <li class="nav-bar-li"><div id="Joinus"><a  class="nav-bar-li-a" href="/pages/sinuppage.html">JOIN US</a></div></li>
+                    <li class="nav-bar-li"><div id="login"><a  class="nav-bar-li-a" href="/login.html">LOGIN</a></div></li>
+                    <li class="nav-bar-li"><div id="aboutus"><a class="nav-bar-li-a" href="">ABOUT US</a></div></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="starting-section">
+            <div class="starting-section-container">
+                <div class="lunch-box"><img id="lunchboximg" src="/images/food-basket1.png">
+                </div>
+                <p style="font-size: 50px; font-weight: 600; margin-top: 130px; margin-left: 36%;">Tiffin Services</p> 
+                <div class="search-bar">
+                   <a  href="/search"> <i id="search-icon"  class="fa fa-search"></i></a>
+                    <input id="search-input" name="search" class="search-bar-input" type="text" placeholder="search">
+            </div>
+            </div>
+        </div>
+        <div class="section-2">
+            <div class="explore">
+                <h1>Explore Tiffin Services</h1>
+            </div>
+            {{#if message}}
+            <h6>{{message}}</h6>
+            {{/if}}
+            {{#else}}
+                <div class="list-container">
+                    <div class="scroll">
+                        <div id="list-con" class="list-section">
+                        <div class="list-class">
+                            <img>
+                            <ul class="card-list-ul">
+                                <li class="card-list">Name</li>
+                                <li class="card-list"><i class='fa fa-phone' style="color: #1abc9c;"></i> Mobile No</li>
+                                <li class="card-list"><i class='fa fa-map-marker' style="color: #1abc9c;"></i>address</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {{/else}}
+                <!-- </div>
+                <div class="our-happycustomer">
+                    <div class="content">
+
+                    </div>
+                </div> -->
+            <!-- <footer>
+                <div class="footer-home">
+                </div>
+                <div class="footer-copyright">
+                    <p style="color:white; text-align: center; padding: 10px;">Copyright <span>&#169</span>2023</p>
+                </div>
+            </div>
+            </footer> -->
+        </body>
+        </html>

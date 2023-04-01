@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/login.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="login-image">
+    <div class="login-illusconatiner">
+      <h1 style="color:white">Hi,Welcome back</h1>
+      <br>
+      <br>
+      <img id="loginillus" src="/images/undraw_secure_login_pdn4.svg" alt="">
+    </div>
+    <div class="container">
+      <div class="login-page">
+      <h2 style="color: white;font-size: 34px;">Sign in to tiffin services</h2>
+      <br>
+      <h3 style="color:#FFFFF7;" id="s2">Enter your details below</h3>
+      <br>
+    </div>
+    <form action="/auth/login" method="POST">
+
+    <div class="form">
+      <input type="text" name="Mobile_no" placeholder="" class="textbox">
+      <label style="color: #fff;" class="form-label">
+        Mobile no
+      </label>
+      <br>
+      <br>
+      <br>
+      <input type="password" name="password" placeholder="" class="textbo">
+      <label style="color: #fff;" class="form-labe">
+        Password
+      </label>
+    </div>
+    <br><br>
+    <div class="checkbox-col">
+    <input type="checkbox">
+    <label style="color: #fff;">
+      Remember me
+    </label>
+    <a href="/forget-password"  style="color: #1abc9c;" id="forget">Forget Password?</a>
+    </div>
+    <br>
+    <br>
+    <button type="sumbit"  class="log">Login</button>
+    <br><br>
+    <label style="color:white;padding-left: 20%;">
+      Don't Have an account?<a href="/sinuppage" id="logii">Signup</a>
+    </label>
+  {{#if message}}
+          <script>alert("Password hass been reset successfully");</script>
+          {{/if}}
+  </div>
+  </div>
+    </form>
+</body>
+</html>
