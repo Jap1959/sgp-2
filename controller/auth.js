@@ -51,6 +51,7 @@ exports.singup=async (req,res)=>{
       
      let hashedpass= await bcrypt.hash(password,8);
      console.log(hashedpass);
+     if(image[0]==null){
      db.query('INSERT INTO userdetail SET?',{Name:Name,Mobile_no:Mobile,image:image[0],password: hashedpass,address: address},(error,results)=>{
          if(error){
             console.log(error);
@@ -69,6 +70,27 @@ exports.singup=async (req,res)=>{
             
          }
      });
+    }
+    else{
+        db.query('INSERT INTO userdetail SET?',{Name:Name,Mobile_no:Mobile,image:image,password: hashedpass,address: address},(error,results)=>{
+            if(error){
+               console.log(error);
+            }
+            else{
+            //    let i=0;
+            //    image.forEach(async (elment)=>{
+                   db.query('INSERT INTO imageusers SET?',{Mobile_no: Mobile,image:image},(error,results)=>{
+                       if(error){
+                          console.log(error);
+                       }
+                   });
+                //    i++;
+            //    })
+               return res.render('index');
+               
+            }
+        });
+    }
  
 }
 exports.login=async (req,res)=>{

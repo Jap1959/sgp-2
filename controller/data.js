@@ -65,14 +65,20 @@ exports.addreview = async (req, res) => {
     });
     
 }
-exports.search=async (req,res)=>{
-    const {search}=req.body;
+exports.search=async (req,res,next)=>{
+    const x=req.query;
+    const search=x.searchparams;
+    console.log(search);
     const resdata=[];
-    db.query('Select * FROM userdetail where address=? or Name=? or Mobile_no=?' ,[search,search,search],async (erorr, results) => {
+    if(search!=undefined){
+    db.query(`Select * FROM userdetail where address='${search}' or Name='${search}'  or Mobile_no='${search}' `,async (erorr, results) => {
+        console.log(results);
         if (erorr) {
-            console.log(erorr)
+            console.log(erorr);
+            console.log("anish");
+                res.render('explore',{message:'No results'});
         }
-        if (results!=0) {
+        else if (results!=0) {
 
             results.forEach(async (elment)=>{
                  const image=elment.image;
@@ -82,18 +88,40 @@ exports.search=async (req,res)=>{
                  resdata.push({image,Name,address,Mobile});
 
             });
-             if(resdata!=NULL){
-            res.render('/explore',{results:resdata});
+             if(resdata!=0){
+                res.render('explore',{results:resdata});
              }
-             else{
-                res.render('/explore',{message:'No results'});
-             }
+    }
+    else{
+        console.log("anish");
+                res.render('explore',{message:'No results'}); 
+    }
+});
         }
         else{
-           res.render('/explore',{message:'No results'});
+            db.query('Select * FROM userdetail', async (erorr, results) => {
+                if (erorr) {
+                    console.log(erorr)
+                }
+                if (results.length > 0) {
+                    let i=0;
+                    const data = []
+                    results.forEach(async (row) => {
+                        const address = row.address
+                        const Name = row.Name
+                        const Mobile = row.Mobile_no
+                        const image=row.image
+                        console.log(image);
+                        data.push({
+                            address,image, Name, Mobile
+                        })
+                    })
+                    console.log(data);
+                    res.render('explore',{results:data});
+                }
+            });
         }
-
-    });
+   
 }
 exports.data = async (req, res) => {
    

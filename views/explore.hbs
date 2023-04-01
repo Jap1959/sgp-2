@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 </head>
-<script src="explore.js" defer></script>
+<script src="/pages/explore.js" defer></script>
 <script>
     window.onscroll=function(){scrollFunction()};
     function scrollFunction(){
@@ -30,7 +30,7 @@
     <header>
         <nav id="navbar" class="nav-bar">
                 <ul id="size" class="nav-bar-ul">
-                    <li id="LOGO"><a id="LOGOa" href="#">Tiffinwala</a></li>
+                    <li id="LOGO"><a id="LOGOa" href="/explore">Tiffinwala</a></li>
                     <li class="nav-bar-li"><div id="Joinus"><a  class="nav-bar-li-a" href="/pages/sinuppage.html">JOIN US</a></div></li>
                     <li class="nav-bar-li"><div id="login"><a  class="nav-bar-li-a" href="/login.html">LOGIN</a></div></li>
                     <li class="nav-bar-li"><div id="aboutus"><a class="nav-bar-li-a" href="">ABOUT US</a></div></li>
@@ -43,7 +43,7 @@
                 </div>
                 <p style="font-size: 50px; font-weight: 600; margin-top: 130px; margin-left: 36%;">Tiffin Services</p> 
                 <div class="search-bar">
-                   <a  href="/search"> <i id="search-icon"  class="fa fa-search"></i></a>
+                   <button style="background-color:#1abc9c; border:none;" id="btn-search" onclick=search() > <i id="search-icon"  class="fa fa-search"></i></button>
                     <input id="search-input" name="search" class="search-bar-input" type="text" placeholder="search">
             </div>
             </div>
@@ -52,24 +52,25 @@
             <div class="explore">
                 <h1>Explore Tiffin Services</h1>
             </div>
-            {{#if message}}
-            <h6>{{message}}</h6>
-            {{/if}}
-            {{#else}}
-                <div class="list-container">
+           
+                <div class="list-container" >
                     <div class="scroll">
-                        <div id="list-con" class="list-section">
-                        <div class="list-class">
-                            <img>
-                            <ul class="card-list-ul">
-                                <li class="card-list">Name</li>
-                                <li class="card-list"><i class='fa fa-phone' style="color: #1abc9c;"></i> Mobile No</li>
-                                <li class="card-list"><i class='fa fa-map-marker' style="color: #1abc9c;"></i>address</li>
-                            </ul>
-                        </div>
-                    </div>
+                        {{#if message}}
+                            <h1>{{message}}</h1>
+                           {{else}}
+                              {{#each results}}
+                        <div  class="list-class">
+                              <div class="img-user">
+                               <li class="card-list"><img id='image' src="/images/{{image}}" alt=""></li>
+                              </div>
+                               <li class="card-list">{{Name}}</li>
+                              <li class="card-list"><i class='fa fa-phone' style="color: #1abc9c;">{{Mobile}}</i> </li>
+                              <li class="card-list"><i class='fa fa-map-marker' style="color: #1abc9c;"></i>{{address}}</li>
+                              <li class="card-list"><a id="link-view"  href="/description?Mobile={{Mobile}}" >view more details</a></li>
+                         </div>
+                             {{/each}}
+                           {{/if}}
                 </div>
-                {{/else}}
                 <!-- </div>
                 <div class="our-happycustomer">
                     <div class="content">

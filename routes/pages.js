@@ -16,9 +16,7 @@ router.get('/forget-password', (req, res) => {
 router.get('/index-logout', (req, res) => {
   res.render('index-logout');
 });
-router.get('/explore', (req,res)=>{
-  res.render('explore');
-});
+router.get('/explore',dataController.search);
 router.get('/search', dataController.search);
 router.get('/aboutus', (req, res) => {
   res.render('aboutus');
